@@ -1,0 +1,17 @@
+.hidden-scrollbar{
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    /*noinspection CssUnknownProperty*/
+    scrollbar-width: none;       /* Firefox 対応 */
+}
+.hidden-scrollbar::-webkit-scrollbar{/* Chrome, Safari 対応 */
+    display:none;
+}
+
+html{
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    /*noinspection CssUnknownProperty*/
+    scrollbar-width: none;       /* Firefox 対応 */
+}
+html::-webkit-scrollbar{/* Chrome, Safari 対応 */
+    display:none;
+}
