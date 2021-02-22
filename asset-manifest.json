@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/calcDrillWeb/static/css/main.34f9587a.chunk.css",
-    "main.js": "/calcDrillWeb/static/js/main.933f6962.chunk.js",
-    "main.js.map": "/calcDrillWeb/static/js/main.933f6962.chunk.js.map",
+    "main.js": "/calcDrillWeb/static/js/main.f7e7cea9.chunk.js",
+    "main.js.map": "/calcDrillWeb/static/js/main.f7e7cea9.chunk.js.map",
     "runtime-main.js": "/calcDrillWeb/static/js/runtime-main.53a98a7d.js",
     "runtime-main.js.map": "/calcDrillWeb/static/js/runtime-main.53a98a7d.js.map",
-    "static/js/2.18dbdeb4.chunk.js": "/calcDrillWeb/static/js/2.18dbdeb4.chunk.js",
-    "static/js/2.18dbdeb4.chunk.js.map": "/calcDrillWeb/static/js/2.18dbdeb4.chunk.js.map",
+    "static/js/2.05da845f.chunk.js": "/calcDrillWeb/static/js/2.05da845f.chunk.js",
+    "static/js/2.05da845f.chunk.js.map": "/calcDrillWeb/static/js/2.05da845f.chunk.js.map",
     "static/js/3.8d98ac68.chunk.js": "/calcDrillWeb/static/js/3.8d98ac68.chunk.js",
     "static/js/3.8d98ac68.chunk.js.map": "/calcDrillWeb/static/js/3.8d98ac68.chunk.js.map",
     "index.html": "/calcDrillWeb/index.html",
     "static/css/main.34f9587a.chunk.css.map": "/calcDrillWeb/static/css/main.34f9587a.chunk.css.map",
-    "static/js/2.18dbdeb4.chunk.js.LICENSE.txt": "/calcDrillWeb/static/js/2.18dbdeb4.chunk.js.LICENSE.txt",
+    "static/js/2.05da845f.chunk.js.LICENSE.txt": "/calcDrillWeb/static/js/2.05da845f.chunk.js.LICENSE.txt",
     "static/media/bt3.fa6e74d4.mp3": "/calcDrillWeb/static/media/bt3.fa6e74d4.mp3",
     "static/media/bubuu.4983ce95.mp3": "/calcDrillWeb/static/media/bubuu.4983ce95.mp3",
     "static/media/hayaosi.f4c818a1.mp3": "/calcDrillWeb/static/media/hayaosi.f4c818a1.mp3",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.53a98a7d.js",
-    "static/js/2.18dbdeb4.chunk.js",
+    "static/js/2.05da845f.chunk.js",
     "static/css/main.34f9587a.chunk.css",
-    "static/js/main.933f6962.chunk.js"
+    "static/js/main.f7e7cea9.chunk.js"
   ]
 }
