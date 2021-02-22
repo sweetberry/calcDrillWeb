@@ -5,7 +5,7 @@ import {Modal, Button, Card} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faThumbsUp} from "@fortawesome/free-regular-svg-icons";
 import {i18n} from '../common/i18n';
-import {pressSound, successSound} from '../common/sounds'
+import {openSound, pressSound} from '../common/sounds'
 export interface ShareModalProps {
     isShow: boolean
     onClickNext: () => void;
@@ -21,7 +21,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
         onClickNext()
     }
     const handleEntering = () => {
-        successSound.play();
+        openSound.play();
     }
     const borderRadius = 20;
     const shareModal_next = i18n.t('playTogether');
