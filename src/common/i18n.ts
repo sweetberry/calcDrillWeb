@@ -109,4 +109,8 @@ i18n.addResources( 'en', 'translation', {withInClear: 'Clear within {{sec}} sec!
 i18n.addResources( 'ja', 'translation', {withInClear: '{{sec}}秒以内にクリア!'} );
 i18n.addResources( 'es', 'translation', {withInClear: 'Borrar en {{sec}} segundos!'} );
 
+i18n.addResources( 'en', 'translation', {playTogether: 'Let\'s play together!'} );
+i18n.addResources( 'ja', 'translation', {playTogether: 'みんなで頑張ろう!'} );
+i18n.addResources( 'es', 'translation', {playTogether: '¡Juguemos juntos!'} );
+
 export {i18n};
