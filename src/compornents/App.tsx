@@ -30,12 +30,12 @@ export const App: React.FC = () => {
     return (
         <div className={'h-100 w-100'}>
             <FontAwesomeIcon
-                className={'mr-3 mt-2 float-right text-muted'}
+                className={'mr-3 mt-2 float-right text-muted user-select-none'}
                 size={"2x"}
                 icon={faQrcode}
                 onClick={handleShowShareModal}
             />
-            <h2 className={'text-center'}>Calc Drill</h2>
+            <h2 className={'text-center user-select-none'}>Calc Drill</h2>
             <ShareModal
                 isShow={isShowShareModal}
                 onClickNext={handleHideShareModal}

@@ -38,6 +38,7 @@ export const QuestionCharacter: React.FC<QuestionCharacterProps> = ({
 
     return (
         <div
+            className={'user-select-none'}
             style={{
                 width: `${size * .7}px`,
                 height: `${size}px`,

@@ -20,7 +20,7 @@ export const ResultListRow: React.FC<ResultListRowProps> = ({problemLog}) => {
     const durationColor = (problemStatus === 'success') ? 'success' : 'warning';
 
     return (
-        <Row className={'mx-0 justify-content-center'}>
+        <Row className={'mx-0 justify-content-center user-select-none'}>
             <Col xs={7}
                  sm={4}
                  className={''}>

@@ -36,7 +36,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
             centered
             dialogClassName={'dialog-style'}
             keyboard={false}
-            contentClassName={'bg-transparent border-0'}
+            contentClassName={'bg-transparent border-0 user-select-none'}
             backdropClassName={'bg-dark'}
         >
             <Card

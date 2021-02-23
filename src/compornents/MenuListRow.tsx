@@ -26,7 +26,7 @@ export const MenuListRow: React.FC<MenuListRowProps> = ({title, description, lev
     return (
         // <Container>
         <Row
-            className={'mx-0 justify-content-center'}>
+            className={'mx-0 justify-content-center user-select-none'}>
             <Col xs={4} sm={5}>
                 <Row xs={1} sm={2} className={'h-100'}>
                     <Col className={`d-flex align-items-center`}>

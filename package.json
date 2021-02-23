@@ -1,6 +1,6 @@
 {
   "name": "calc-drill-web",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "homepage": "https://sweetberry.github.io/calcDrillWeb/",
   "dependencies": {
