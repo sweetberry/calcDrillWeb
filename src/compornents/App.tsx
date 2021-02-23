@@ -19,30 +19,32 @@ export const App: React.FC = () => {
         setPlayingLevelID(levelID);
     }
 
-    const handleShowShareModal=()=>{
+    const handleShowShareModal = () => {
         setIsShowShareModal(true);
     }
 
-    const handleHideShareModal=()=>{
+    const handleHideShareModal = () => {
         setIsShowShareModal(false);
     }
 
     return (
         <div className={'h-100 w-100'}>
-            <FontAwesomeIcon
-                className={'mr-3 mt-2 float-right text-muted user-select-none'}
-                size={"2x"}
-                icon={faQrcode}
-                onClick={handleShowShareModal}
-            />
-            <h2 className={'text-center user-select-none'}>Calc Drill</h2>
             <ShareModal
                 isShow={isShowShareModal}
                 onClickNext={handleHideShareModal}
             />
-            {!playingLevelID && <MenuList
-                startLevel={handleStartLevel}
-            />}
+            {!playingLevelID &&
+            <div>
+              <FontAwesomeIcon
+                  className={'mr-3 mt-2 float-right text-muted user-select-none'}
+                  size={"2x"}
+                  icon={faQrcode}
+                  onClick={handleShowShareModal}
+              />
+              <h2 className={'text-center user-select-none'}>Calc Drill</h2>
+              <MenuList
+                  startLevel={handleStartLevel}
+              /></div>}
             {playingLevelID &&
             <LevelView
                 exitLevel={handleExitLevel}
