@@ -117,7 +117,7 @@ export const ResultList: React.FC<ResultListProps> = ({levelRecord, exitLevel}) 
                 )
             })}
             <hr style={{borderTopWidth: '5px'}}/>
-            <Row className={'mx-0 justify-content-center pb-4'}>
+            <Row className={'mx-0 justify-content-center pb-4 user-select-none'}>
                 <Col xs={7}
                      sm={4}
                      className={'d-flex align-items-center justify-content-end'}>

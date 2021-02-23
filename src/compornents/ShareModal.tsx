@@ -3,18 +3,16 @@ import '../css/bootstrap.min.css';
 import '../css/dialog-style.css';
 import {Modal, Button, Card} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCheckCircle} from "@fortawesome/free-regular-svg-icons";
-import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {faThumbsUp} from "@fortawesome/free-regular-svg-icons";
 import {i18n} from '../common/i18n';
-import {pressSound, successSound} from '../common/sounds'
-
-export interface SuccessModalProps {
+import {openSound, pressSound} from '../common/sounds'
+export interface ShareModalProps {
     isShow: boolean
     onClickNext: () => void;
 }
 
 
-export const SuccessModal: React.FC<SuccessModalProps> = ({
+export const ShareModal: React.FC<ShareModalProps> = ({
                                                               isShow = true,
                                                               onClickNext,
                                                           }) => {
@@ -23,10 +21,10 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
         onClickNext()
     }
     const handleEntering = () => {
-        successSound.play();
+        openSound.play();
     }
     const borderRadius = 20;
-    const successModal_next = i18n.t('successModal_next');
+    const shareModal_next = i18n.t('playTogether');
 
     return (
         <Modal
@@ -42,17 +40,13 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
             backdropClassName={'bg-dark'}
         >
             <Card
-                className={'p-3 text-white bg-success mb-0 d-flex justify-content-center align-items-center'}
+                className={'p-3 text-white bg-primary mb-0 d-flex justify-content-center align-items-center'}
                 style={{
                     borderTopLeftRadius: borderRadius,
                     borderTopRightRadius: borderRadius,
                 }}
             >
-                <FontAwesomeIcon
-                    size={'6x'}
-                    className={''}
-                    icon={faCheckCircle}
-                />
+                <img alt={'url'} src={`${process.env.PUBLIC_URL}/QR_code.png`} />
             </Card>
             <div
                 className={'bg-primary p-2 flex-grow-1 text-center'}
@@ -68,9 +62,9 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
                 >
                     <FontAwesomeIcon
                         className={'mr-2'}
-                        icon={faArrowRight}
+                        icon={faThumbsUp}
                     />
-                    {successModal_next}
+                    {shareModal_next}
                 </Button>
             </div>
         </Modal>)
