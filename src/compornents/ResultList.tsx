@@ -6,7 +6,7 @@ import {i18n} from "../common/i18n";
 import {getCurrentCharactersAndProblemStatus} from "./useSolveProblem";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMugHot, faThumbsUp} from "@fortawesome/free-solid-svg-icons";
-import {cheerSound, resultSound} from '../common/sounds'
+import {cheerSound, openSound, resultSound} from '../common/sounds'
 import Confetti from 'react-confetti'
 import {useDimension} from "./useDimension";
 import {saveLevelRecordAsync, loadLevelRecordAsync} from '../common/repository'
@@ -32,8 +32,8 @@ async function evaluateLevelRecord(levelRecord) {
 
     const isComplete = successCount === problemLogs.length;
 
-    const prevlevelRecord = await loadLevelRecordAsync(levelID);
-    const prevBestResult = prevlevelRecord.bestResult;
+    const prevLevelRecord = await loadLevelRecordAsync(levelID);
+    const prevBestResult = prevLevelRecord.bestResult;
 
     let isNewRecord = false;
     if (!prevBestResult) {
@@ -47,8 +47,8 @@ async function evaluateLevelRecord(levelRecord) {
 
     const newLevelRecord = {
         lastResult,
-        bestResult: (isNewRecord) ? lastResult : prevlevelRecord.bestResult,
-        clearCount: prevlevelRecord.clearCount + 1,
+        bestResult: (isNewRecord) ? lastResult : prevLevelRecord.bestResult,
+        clearCount: prevLevelRecord.clearCount + 1,
     }
     // saveLevelRecord(levelID, newLevelRecord);
     await saveLevelRecordAsync(levelID, newLevelRecord);
@@ -98,6 +98,13 @@ export const ResultList: React.FC<ResultListProps> = ({levelRecord, exitLevel}) 
         // eslint-disable-next-line
     }, [])
 
+
+    const handleExit=()=>{
+        openSound.play();
+        if(exitLevel){
+            exitLevel();
+        }
+    }
 
     const targetRefRoot = useRef<HTMLDivElement>(null);
     const rootDimensions = useDimension(targetRefRoot);
@@ -165,7 +172,7 @@ export const ResultList: React.FC<ResultListProps> = ({levelRecord, exitLevel}) 
                     {!isComplete &&
                     <Button className={'btn-success'}
                             style={{borderRadius: "30px"}}
-                            onClick={exitLevel}>
+                            onClick={handleExit}>
                       <FontAwesomeIcon
                           className={'mr-2'}
                           size={"2x"}
@@ -176,7 +183,7 @@ export const ResultList: React.FC<ResultListProps> = ({levelRecord, exitLevel}) 
                     {isComplete &&
                     <Button className={'btn-success'}
                             style={{borderRadius: "30px"}}
-                            onClick={exitLevel}>
+                            onClick={handleExit}>
                       <FontAwesomeIcon
                           className={'mr-2'}
                           size={"2x"}
