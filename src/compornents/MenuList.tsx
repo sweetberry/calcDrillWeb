@@ -7,14 +7,28 @@ import {useDimension} from "./useDimension";
 import {StartModal} from './StartModal';
 
 function getMenuItems() {
-    return Promise.all(Object.entries(levels).map(async ([key, value]) => {
+    let challengeLevelIndex = 0;
+    return Promise.all(Object.entries(levels).map(async ([key, value], index) => {
         const levelID = key;
         const levelRecord = await loadLevelRecordAsync(levelID);
+        const isCompleted = levelRecord.bestResult && levelRecord.bestResult.totalCount === levelRecord.bestResult.successCount;
+        console.log(isCompleted, index);
+        if (isCompleted) {
+            challengeLevelIndex = index + 1;
+        }
+        let visible = "hidden";
+        if (index === challengeLevelIndex + 1) {
+            visible = "mute";
+        }
+        if (index <= challengeLevelIndex) {
+            visible = "show";
+        }
         return ({
             levelID,
             title: value.title,
             description: value.description,
             levelRecord,
+            visible,
         })
     }))
 }
@@ -65,6 +79,7 @@ export const MenuList: React.FC<MenuListProps> = ({startLevel}) => {
         };
     }, [])
 
+    // noinspection FunctionWithMultipleReturnPointsJS
     return (
         <Container ref={targetRefRoot}>
             <StartModal
@@ -80,21 +95,26 @@ export const MenuList: React.FC<MenuListProps> = ({startLevel}) => {
 
             />
             <ListGroup>
+                {/* eslint-disable-next-line */}
                 {menuItems.map((item) => {
-                    return (<ListGroup.Item action
-                                            className={tempClassName}
-                                            key={item.levelID}
-                                            onClick={() => {
-                                                handleRowClick(item.levelID)
-                                            }}
+                    if (item.visible !== "hidden") {
+                        return (<ListGroup.Item action
+                                                className={tempClassName}
+                                                key={item.levelID}
+                                                onClick={() => {
+                                                    handleRowClick(item.levelID)
+                                                }}
+                                                disabled={item.visible === "mute"}
 
-                    >
-                        <MenuListRow
-                            key={item.levelID}
-                            title={item.title}
-                            description={item.description}
-                            levelRecord={item.levelRecord}
-                        /></ListGroup.Item>)
+                        >
+                            <MenuListRow
+                                key={item.levelID}
+                                title={item.title}
+                                description={item.description}
+                                levelRecord={item.levelRecord}
+                            /></ListGroup.Item>)
+                    }
+
                 })}
             </ListGroup>
         </Container>
