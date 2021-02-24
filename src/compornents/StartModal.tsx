@@ -19,8 +19,8 @@ export interface StartModalProps {
 
 export const StartModal: React.FC<StartModalProps> = ({
                                                           isShow = true,
-                                                          title = 'Level1',
-                                                          description = '1桁 × 1桁',
+                                                          title = '',
+                                                          description = '',
                                                           onClickStart,
                                                           onClickCancel
                                                       }) => {

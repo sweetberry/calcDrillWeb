@@ -30,6 +30,7 @@ leftArray.forEach((leftTerm) => {
 const level = {
     "title": "Level7",
     "description":"4の段",
+    "questionCount": 9,
     questions
 }
 

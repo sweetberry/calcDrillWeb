@@ -19,7 +19,8 @@ import level_9x9_lv09_hole from './level_9x9_lv09_hole'
 import level_9x9_lv10 from './level_9x9_lv10'
 import level_9x9_lv10_hole from './level_9x9_lv10_hole'
 
-export const levels = {
+
+const levels = {
     level_9x9_lv01,
     level_9x9_lv01_hole,
     level_9x9_lv02,
@@ -41,3 +42,14 @@ export const levels = {
     level_9x9_lv10,
     level_9x9_lv10_hole,
 }
+
+for (const [key, value] of Object.entries(levels)) {
+    if (!value.title) {
+    throw new Error(`title is not find in Level:${key}`)
+    }
+    if (!value.questionCount) {
+        throw new Error(`questionCount is not find in Level:${key}`)
+    }
+}
+
+export {levels}
